@@ -1,0 +1,64 @@
+@import "variables"
+@import "mixins"
+
+.home-screen-header
+    display: flex
+    align-items: center
+    height: 64px
+    line-height: 64px
+    padding: 1%
+.new
+  padding: 1% 10%
+  background: #dadce0
+  &-header
+    height: 50px
+    +flexCenter
+
+  &-content
+    padding: 1%
+    .create
+      +flexCenter
+      border: $border
+      border-radius: 4px
+      width: 160px
+      height: 160px
+      background: #fff
+      font-size: 1.5rem
+      text-decoration: none
+      color: #000
+      &:hover
+        cursor: pointer
+        color: green
+        border-color: green
+
+.home-screen-history
+  padding: 1% 10%
+  font-size: 1.5em
+  color: #000
+  .cell
+    +flexCenter
+    padding: 0 1%
+  &-header
+    display: grid
+    grid-template-columns: 3fr 1fr
+    font-weight: bold
+
+
+  .item
+    @extend .home-screen-history-header
+    font-weight: normal
+    height: 3rem
+    border-bottom: $border
+
+    .title
+      justify-content: end
+  .item:hover
+    background: #e6f4ea
+    border-radius: 25px
+    cursor: pointer
+
+
+
+
+
+

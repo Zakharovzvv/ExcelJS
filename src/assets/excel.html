@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" class="container">
+    <div class="excel">
+        <div class="excel-header-container">
+            <div class="excel-header">
+                <input type="text" class="file-name">
+                <div class="icons">
+                    <span class="material-icons button">delete</span>
+                    <span class="material-icons button">exit_to_app</span>
+                </div>
+            </div>
+            <div class="excel-toolbar">
+                <span class="material-icons button">format_align_left</span>
+                <span class="material-icons button">format_align_center</span>
+                <span class="material-icons button">format_align_right</span>
+                <span class="material-icons button">format_bold</span>
+                <span class="material-icons button">format_italic</span>
+                <span class="material-icons button">format_underlined</span>
+            </div>
+            <div class="excel-formula">
+                <div class="label">fx</div>
+                <div class="formula" contenteditable="true" spellcheck="false"></div>
+            </div>
+        </div>
+        <div class="excel-table">
+            <div class="row">
+                <div class="row-info cell"></div>
+                <div class="row-data">
+                    <div class="cell-header">A</div>
+                    <div class="cell-header">b</div>
+                    <div class="cell-header">c</div>
+                    <div class="cell-header">d</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-info cell">1</div>
+                <div class="row-data">
+                    <div class="cell selected" contenteditable="">A</div>
+                    <div class="cell" contenteditable>b</div>
+                    <div class="cell" contenteditable>c</div>
+                    <div class="cell" contenteditable>d</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-info cell">2</div>
+                <div class="row-data">
+                    <div class="cell" contenteditable="">A</div>
+                    <div class="cell" contenteditable>b</div>
+                    <div class="cell" contenteditable>c</div>
+                    <div class="cell" contenteditable>d</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

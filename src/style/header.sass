@@ -1,0 +1,36 @@
+@import "variables"
+@import "mixins"
+.excel-header
+  height: $header-height
+  padding: 0 1%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border: $border
+
+  .file-name
+    border: 1px solid transparent
+    border-radius: 2px
+    color: #fff
+    font-size: 18px
+    font-variant-ligatures: no-contextual
+    height: 20px
+    line-height: 22px
+    min-width: 1px
+    padding: 2px 7px
+    width: 10%
+    &:hover
+      border-color: #e5e5e5
+    &:focus
+      border: 2px solid #1a73e8
+      margin: -1px
+      box-shadow: none
+      border-radius: 4px
+      color: #000
+
+  .icons
+    display: flex
+.button
+  +button(red)
+
+

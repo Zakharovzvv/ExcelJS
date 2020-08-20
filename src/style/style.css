@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.excel-header {
+  height: 32px;
+  padding: 0 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #c0c0c0;
+}
+.excel-header .file-name {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 18px;
+  font-variant-ligatures: no-contextual;
+  height: 20px;
+  line-height: 22px;
+  min-width: 1px;
+  padding: 2px 7px;
+  width: 10%;
+}
+.excel-header .file-name:hover {
+  border-color: #e5e5e5;
+}
+.excel-header .file-name:focus {
+  border: 2px solid #1a73e8;
+  margin: -1px;
+  box-shadow: none;
+  border-radius: 4px;
+  color: #000;
+}
+.excel-header .icons {
+  display: flex;
+}
+
+.button {
+  min-width: 24px;
+  height: 24px;
+  margin: 6px 1px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.button:active {
+  color: red;
+}
+.button:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.excel-toolbar {
+  height: 38px;
+  padding: 0 1%;
+  display: flex;
+  border: 1px solid #c0c0c0;
+  border-top: 0;
+}
+
+.excel-formula {
+  height: 24px;
+  padding-right: 1%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #c0c0c0;
+  border-top: 0;
+}
+.excel-formula .formula {
+  height: 100%;
+  padding: 4px 10px;
+  overflow: hidden;
+  width: auto;
+  outline: none;
+  cursor: text;
+  width: 100%;
+  color: #444;
+}
+.excel-formula .label {
+  width: 45px;
+  font-size: 18px;
+  text-align: center;
+  border-right: 1px solid #c0c0c0;
+}
+
+.excel-table {
+  position: relative;
+  height: 100%;
+  max-width: 100%;
+  top: 94px;
+  overflow: auto;
+  border: 1px solid #c0c0c0;
+  border-top: 0;
+  border-bottom: 0;
+}
+.excel-table .row {
+  display: flex;
+  min-height: 20px;
+  height: 20px;
+}
+.excel-table .row .row-data {
+  display: flex;
+}
+.excel-table .row .cell, .excel-table .row .row-info, .excel-table .row .cell-header {
+  height: 20px;
+  width: 120px;
+  border: 1px solid #c0c0c0;
+  width: 120px;
+  min-width: 40px;
+  border-top: 0;
+  border-left: 0;
+  padding: 5px;
+  outline: none;
+  white-space: nowrap;
+}
+.excel-table .row .cell.selected, .excel-table .row .selected.row-info, .excel-table .row .selected.cell-header {
+  border: none;
+  outline: 2px solid #3c74ff;
+  z-index: 2;
+}
+.excel-table .row .cell-header, .excel-table .row .row-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+}
+.excel-table .row .row-info {
+  width: 45px;
+  justify-content: end;
+}
+
+.home-screen-header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  line-height: 64px;
+  padding: 1%;
+}
+
+.new {
+  padding: 1% 10%;
+  background: #dadce0;
+}
+.new-header {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-content {
+  padding: 1%;
+}
+.new-content .create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+  width: 160px;
+  height: 160px;
+  background: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #000;
+}
+.new-content .create:hover {
+  cursor: pointer;
+  color: green;
+  border-color: green;
+}
+
+.home-screen-history {
+  padding: 1% 10%;
+  font-size: 1.5em;
+  color: #000;
+}
+.home-screen-history .cell, .home-screen-history .excel-table .row .cell-header, .excel-table .row .home-screen-history .cell-header, .home-screen-history .excel-table .row .row-info, .excel-table .row .home-screen-history .row-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1%;
+}
+.home-screen-history-header, .home-screen-history .item {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  font-weight: bold;
+}
+.home-screen-history .item {
+  font-weight: normal;
+  height: 3rem;
+  border-bottom: 1px solid #c0c0c0;
+}
+.home-screen-history .item .title {
+  justify-content: end;
+}
+.home-screen-history .item:hover {
+  background: #e6f4ea;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  color: black;
+}
+
+.container {
+  max-width: 100vw;
+  max-width: 100%;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.excel-header-container {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
