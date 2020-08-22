@@ -3,24 +3,23 @@
 
 .excel-table
   position: relative
-  height: 100%
-  max-width: 100%
   top: $header-height + $toolbar-height+$formula-height
   overflow: auto
   border: $border
   border-top: 0
   border-bottom: 0
+  max-height: 1000px
   .row
     display: flex
     min-height: 20px
     height: $cell-height
     .row-data
       display: flex
+
     .cell
       height: $cell-height
       width: $cell-width
       border: $border
-      width: $cell-width
       min-width: 40px
       border-top: 0
       border-left: 0
@@ -34,14 +33,11 @@
 
     .cell-header
       @extend .cell
-      display: flex
-      justify-content: center
-      align-items: center
+      +flexCenter
       background: #f8f9fa
     .row-info
       @extend .cell, .cell-header
       width: $first-column-width
-      justify-content: end
 
 
 

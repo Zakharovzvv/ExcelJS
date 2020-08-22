@@ -13,6 +13,7 @@
     "max-len": ["error",150,{"ignoreUrls": true}],
     "no-alert": "off",
     "no-console": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off"
   }
 }
