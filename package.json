@@ -12,12 +12,20 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zakharovzvv/ExcelJS.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zakharovzvv/ExcelJS/issues"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "autoprefixer": "^9.8.6",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.3.0",
@@ -26,7 +34,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.1",
     "eslint": "^7.7.0",
-    "eslint-config-google": "*",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.3",
     "eslint-plugin-import": "^2.22.0",
@@ -51,6 +59,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+
     "normalize.css": "^8.0.1"
   },
   "husky": {
