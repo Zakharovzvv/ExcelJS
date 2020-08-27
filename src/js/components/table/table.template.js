@@ -21,10 +21,12 @@ const CODES = {
 // 	return row;
 // }
 
-function toCell(_, index) {
-	return `
-    <div class="cell" contenteditable data-col="${index}"></div>
+function toCell(row) {
+	return function (_, col) {
+		return `
+    <div class="cell" contenteditable data-col="${col}" data-id="${row}:${col}" data-type="cell"></div>
   `;
+	};
 }
 
 function toColumn(col, index) {
@@ -61,7 +63,7 @@ export function createTable(rowsCount = 15) {
 	for (let i = 0; i < rowsCount; i++) {
 		const cells = new Array(colsCount)
 			.fill('')
-			.map(toCell)
+			.map(toCell(i))
 			.join('');
 
 		rows.push(createRow(i + 1, cells));

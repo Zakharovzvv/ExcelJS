@@ -1,31 +1,21 @@
 import { $ } from '../../core/dom';
+import { Emitter } from '../../core/Emitter';
 
 class Excel {
 	constructor(selector, options) {
 		// this.container = document.querySelector(selector);
 		this.$container = $(selector);
 		this.contentElements = options.components || [];
+		this.emitter = new Emitter();
 	}
 
-	// createEl(classname, content){
-	//     const el=document.createElement('div');
-	//     el.classList.add(classname);
-	//     el.insertAdjacentHTML('afterbegin',content);
-	//     return el;
-	// }
-	//   getContent() {
-	//     const fragment=document.createDocumentFragment();
-	//     this.contentElements.forEach(el=>{
-	//       const elInstance=new el();
-	//       fragment.append(this.createEl(el.className,elInstance.toHTML()))
-	//     })
-	//     return fragment;
-	//   }
 	getContent() {
 		const $root = $.create('div', 'excel');
+
+		const componentOptions = { emitter: this.emitter };
 		this.contentElements = this.contentElements.map((El) => {
 			const $el = $.create('div', El.className);
-			const elInstance = new El($el);
+			const elInstance = new El($el, componentOptions);
 			// debugger
 			$el.html(elInstance.toHTML());
 			$root.append($el);

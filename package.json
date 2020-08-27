@@ -62,7 +62,7 @@
 
     "normalize.css": "^8.0.1"
   },
-  "husky": {
+  "husky1": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
