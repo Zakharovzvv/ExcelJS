@@ -4,7 +4,7 @@
   "description": "Pure Java Script excel application",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --open",
     "build": "webpack",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix --color",

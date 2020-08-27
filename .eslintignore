@@ -2,5 +2,5 @@ node_modules
 /.git
 /.idea
 dist
-webpack.config.js
+
 

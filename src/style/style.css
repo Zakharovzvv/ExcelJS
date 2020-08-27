@@ -110,9 +110,13 @@
 }
 .excel-table .row .row-data {
   display: flex;
+  height: 100%;
 }
-.excel-table .row .cell, .excel-table .row .row-info, .excel-table .row .cell-header {
-  height: 20px;
+.excel-table .row .row-info {
+  width: 45px;
+  height: 100%;
+}
+.excel-table .row .cell, .excel-table .row .column-header, .excel-table .row .row-info {
   width: 120px;
   border: 1px solid #c0c0c0;
   min-width: 40px;
@@ -122,19 +126,44 @@
   outline: none;
   white-space: nowrap;
 }
-.excel-table .row .cell.selected, .excel-table .row .selected.row-info, .excel-table .row .selected.cell-header {
+.excel-table .row .cell.selected, .excel-table .row .selected.column-header, .excel-table .row .selected.row-info {
   border: none;
   outline: 2px solid #3c74ff;
   z-index: 2;
 }
-.excel-table .row .cell-header, .excel-table .row .row-info {
+.excel-table .row .column-header, .excel-table .row .row-info {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #f8f9fa;
+  position: relative;
 }
-.excel-table .row .row-info {
-  width: 45px;
+.excel-table .row .column-header .row-resizer, .excel-table .row .row-info .row-resizer, .excel-table .row .column-header .column-resizer, .excel-table .row .row-info .column-resizer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: #3c74ff;
+}
+.excel-table .row .column-header .row-resizer:hover, .excel-table .row .row-info .row-resizer:hover, .excel-table .row .column-header .column-resizer:hover, .excel-table .row .row-info .column-resizer:hover {
+  opacity: 1 !important;
+}
+.excel-table .row .column-header .row-resizer, .excel-table .row .row-info .row-resizer {
+  left: 0;
+  height: 4px;
+  width: 100vw;
+}
+.excel-table .row .column-header .row-resizer:hover, .excel-table .row .row-info .row-resizer:hover {
+  cursor: row-resize;
+}
+.excel-table .row .column-header .column-resizer, .excel-table .row .row-info .column-resizer {
+  top: 0;
+  width: 4px;
+  height: 100vh;
+}
+.excel-table .row .column-header .column-resizer:hover, .excel-table .row .row-info .column-resizer:hover {
+  cursor: col-resize;
 }
 
 .home-screen-header {
@@ -182,7 +211,7 @@
   font-size: 1.5em;
   color: #000;
 }
-.home-screen-history .cell, .home-screen-history .excel-table .row .cell-header, .excel-table .row .home-screen-history .cell-header, .home-screen-history .excel-table .row .row-info, .excel-table .row .home-screen-history .row-info {
+.home-screen-history .cell, .home-screen-history .excel-table .row .row-info, .excel-table .row .home-screen-history .row-info, .home-screen-history .excel-table .row .column-header, .excel-table .row .home-screen-history .column-header {
   display: flex;
   justify-content: center;
   align-items: center;

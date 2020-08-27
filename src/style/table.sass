@@ -15,9 +15,12 @@
     height: $cell-height
     .row-data
       display: flex
-
+      height: 100%
+    .row-info
+      @extend .cell, .column-header
+      width: $first-column-width
+      height: 100%
     .cell
-      height: $cell-height
       width: $cell-width
       border: $border
       min-width: 40px
@@ -31,13 +34,35 @@
         outline: 2px solid #3c74ff
         z-index: 2
 
-    .cell-header
+    .column-header
       @extend .cell
       +flexCenter
       background: #f8f9fa
-    .row-info
-      @extend .cell, .cell-header
-      width: $first-column-width
+      position: relative
+      .row-resizer,.column-resizer
+        position: absolute
+        right: 0
+        bottom: 0
+        z-index: 1000
+        opacity: 0
+        background: $primary-color
+        &:hover
+          opacity: 1!important
+      .row-resizer
+        left: 0
+        height: 4px
+        width: 100vw
+        &:hover
+          cursor: row-resize
+      .column-resizer
+        top: 0
+        width: 4px
+        height: 100vh
+        &:hover
+          cursor: col-resize
+
+
+
 
 
 
