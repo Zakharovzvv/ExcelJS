@@ -2,8 +2,11 @@ import { ExcelComponent } from '../../core/ExcelComponent';
 
 class Toolbar extends ExcelComponent {
   static  className='excel-toolbar'
-	constructor($root) {
-		super($root,{name:'Toolbar',listeners:['click']});
+	constructor($root,options) {
+		super(
+			$root,
+			{name:'Toolbar',listeners:['click'],...options}
+			);
 	}
 	toHTML() {
 		return `    <span class="material-icons button">format_align_left</span>

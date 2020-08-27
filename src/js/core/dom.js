@@ -11,6 +11,17 @@ class Dom {
 		return this.$el.outerHTML.trim();
 	}
 
+	text(text) {
+		if (typeof text === 'string') {
+			this.$el.textContent = text;
+			return this;
+		}
+		if (this.$el.tagName.toLowerCase() === 'input') {
+			return this.$el.value.trim();
+		}
+		return this.$el.textContent.trim();
+	}
+
 	clear() {
 		this.html = '';
 		return this;
@@ -18,6 +29,7 @@ class Dom {
 
 	append(node) {
 		if (node instanceof Dom) {
+			// eslint-disable-next-line no-param-reassign
 			node = node.$el;
 		}
 		if (Element.prototype.append) {
@@ -28,6 +40,11 @@ class Dom {
 		return this;
 	}
 
+	/**
+	 * Function set event listener
+	 * @param event
+	 * @param callback
+	 */
 	on(event, callback) {
 		this.$el.addEventListener(event, callback);
 	}
@@ -41,6 +58,7 @@ class Dom {
 	}
 
 	closest(selector) {
+		// eslint-disable-next-line no-use-before-define
 		return $(this.$el.closest(selector));
 	}
 
@@ -59,6 +77,35 @@ class Dom {
 
 	findAll(selector) {
 		return this.$el.querySelectorAll(selector);
+	}
+
+	find(selector) {
+		// eslint-disable-next-line no-use-before-define
+		return $(this.$el.querySelector(selector));
+	}
+
+	focus() {
+		this.$el.focus();
+		return this;
+	}
+
+	addClass(className) {
+		this.$el.classList.add(className);
+	}
+
+	removeClass(className) {
+		this.$el.classList.remove(className);
+	}
+
+	id(parse) {
+		if (parse) {
+			const parsed = this.id().split(':');
+			return {
+				row: +parsed[0],
+				col: +parsed[1],
+			};
+		}
+		return this.data.id;
 	}
 }
 

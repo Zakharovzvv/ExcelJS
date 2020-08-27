@@ -62,15 +62,14 @@
 
     "normalize.css": "^8.0.1"
   },
-  "husky": {
+  "husky1": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
-      "npm run lint:fix",
-      "git add"
+      "npm run lint:fix"
     ]
   }
 }

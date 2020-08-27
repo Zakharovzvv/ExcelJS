@@ -152,18 +152,24 @@
 .excel-table .row .column-header .row-resizer, .excel-table .row .row-info .row-resizer {
   left: 0;
   height: 4px;
-  width: 100vw;
+  width: 100%;
 }
 .excel-table .row .column-header .row-resizer:hover, .excel-table .row .row-info .row-resizer:hover {
   cursor: row-resize;
 }
+.excel-table .row .column-header .row-resizer:active, .excel-table .row .row-info .row-resizer:active {
+  width: 100vw;
+}
 .excel-table .row .column-header .column-resizer, .excel-table .row .row-info .column-resizer {
   top: 0;
   width: 4px;
-  height: 100vh;
+  height: 100%;
 }
 .excel-table .row .column-header .column-resizer:hover, .excel-table .row .row-info .column-resizer:hover {
   cursor: col-resize;
+}
+.excel-table .row .column-header .column-resizer:active, .excel-table .row .row-info .column-resizer:active {
+  height: 100vh;
 }
 
 .home-screen-header {

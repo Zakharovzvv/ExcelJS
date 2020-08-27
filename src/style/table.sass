@@ -51,15 +51,20 @@
       .row-resizer
         left: 0
         height: 4px
-        width: 100vw
+        width: 100%
         &:hover
           cursor: row-resize
+        &:active
+          width: 100vw
       .column-resizer
         top: 0
         width: 4px
-        height: 100vh
+        height: 100%
         &:hover
           cursor: col-resize
+        &:active
+          height: 100vh
+
 
 
 
