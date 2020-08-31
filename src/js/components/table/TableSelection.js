@@ -1,3 +1,5 @@
+import * as actions from '../../redux/actions';
+
 class TableSelection{
   static className='selected'
   constructor() {
@@ -20,6 +22,16 @@ class TableSelection{
     this.clear()
     this.group=group
     this.group.forEach(gr=>gr.addClass(TableSelection.className))
+  }
+  setStyle(table,style){
+    this.group.forEach($el=>{
+      $el.setStyle(style)
+      table.$dispatch(actions.changeStyles({
+        value:style,
+        id:$el.id()
+      }))
+    })
+
   }
 }
 

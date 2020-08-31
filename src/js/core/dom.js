@@ -12,7 +12,7 @@ class Dom {
 	}
 
 	text(text) {
-		if (typeof text === 'string') {
+		if (typeof text !== 'undefined') {
 			this.$el.textContent = text;
 			return this;
 		}
@@ -53,7 +53,10 @@ class Dom {
 		this.$el.removeEventListener(event, callback);
 	}
 
-	get data() {
+	data(dataName = '', data = null) {
+		if (data) {
+			this.$el.setAttribute(dataName, data);
+		}
 		return this.$el.dataset;
 	}
 
@@ -67,12 +70,20 @@ class Dom {
 	}
 
 	setStyle(properties = {}) {
-		// Object.keys(properties).forEach((key) => {
-		// 	this.$el.style[key] = properties[key];
-		// });
-		Object.entries(properties).forEach(([key, value]) => {
-			this.$el.style.setProperty(key, value);
+		Object.keys(properties).forEach((key) => {
+			this.$el.style[key] = properties[key];
 		});
+		// Object.entries(properties).forEach(([key, value]) => {
+		// 	this.$el.style.setProperty(key, value);
+		// });
+	}
+
+	getStyles(styles) {
+		return styles.reduce((acc, styleKey) => {
+			const prop = this.$el.style[styleKey];
+			if (prop) acc[styleKey] = prop;
+			return acc;
+		}, {});
 	}
 
 	findAll(selector) {
@@ -105,7 +116,7 @@ class Dom {
 				col: +parsed[1],
 			};
 		}
-		return this.data.id;
+		return this.data().id;
 	}
 }
 

@@ -3,24 +3,6 @@ const CODES = {
 	Z: 90,
 };
 
-// function createTable(rows) {
-// 	let template = '';
-// 	for (let i = 0; i < rows; i++) {
-// 		template += createRow(i);
-// 	}
-// 	return template;
-// }
-// function createRow(index) {
-// 	let row = '<div class="row">';
-// 	row += `<div class="row-info cell">${index > 0 ? index : ''}</div>`;
-// 	row += '<div class="row-data">';
-// 	for (let i = CODES.A; i < CODES.Z; i++) {
-// 		row += `<div class="${index === 0 ? `cell-header">${toChar(i)}` : 'cell" contenteditable>'}</div>`;
-// 	}
-// 	row += '</div></div>';
-// 	return row;
-// }
-
 function toCell(row) {
 	return function (_, col) {
 		return `
@@ -37,7 +19,7 @@ function toColumn(col, index) {
 
 function createRow(index, content) {
 	return `
-    <div class="row" data-type="resizable">
+    <div class="row" data-type="resizable" data-row="${index}">
       <div class="row-info">${index ? `${index}<div class="row-resizer" data-resize="row"></div>` : ''}</div>
       <div class="row-data">${content}</div>
     </div>
