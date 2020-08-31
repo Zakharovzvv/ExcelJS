@@ -1,4 +1,5 @@
 import { range } from '../../core/utils';
+import { $ } from '../../core/dom';
 
 function canResize({ target }) {
 	return target.dataset.resize;
@@ -40,6 +41,13 @@ function nextSelector(key, { col, row }) {
 
 	return `[data-id="${row}:${col}"]`;
 }
+
+function setColWidth(root, col, width) {
+	root.findAll(`[data-col="${col}"]`)
+		.forEach((el) => {
+			$(el).setStyle({ width: `${width}px` });
+		});
+}
 export {
-	canResize, isCell, matrix, nextSelector,
+	canResize, isCell, matrix, nextSelector, setColWidth,
 };

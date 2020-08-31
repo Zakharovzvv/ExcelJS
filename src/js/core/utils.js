@@ -14,3 +14,38 @@ export function range(start, end) {
 		.fill('')
 		.map((_, index) => start + index);
 }
+
+export function storage(key, data = null) {
+	if (!data) {
+		return JSON.parse(localStorage.getItem(key));
+	}
+	return localStorage.setItem(key, JSON.stringify(data));
+}
+export function isEqual(a, b) {
+	if (typeof a === 'object' && typeof b === 'object') {
+		return JSON.stringify(a) === JSON.stringify(b);
+	}
+	return a === b;
+}
+
+export function debounce(fn, wait) {
+	let timeout;
+	return function (...args) {
+		const later = () => {
+			clearTimeout(timeout);
+			fn.apply(this, args);
+		};
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+	};
+}
+export function evaluateExpression(exp) {
+	if (exp.startsWith('=')) {
+		try {
+			// eslint-disable-next-line no-eval
+			return eval(exp.slice(1));
+		} catch (e) {
+			return exp;
+		}
+	}
+}
