@@ -2,9 +2,11 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "parser": "babel-eslint",
+  "plugins": ["jest"],
   "extends": ["airbnb/base"],
   "rules": {
     "no-plusplus": "off",

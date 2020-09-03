@@ -60,6 +60,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "eslint-plugin-jest": "^23.20.0",
     "normalize.css": "^8.0.1"
   },
   "husky": {
