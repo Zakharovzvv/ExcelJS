@@ -40,12 +40,17 @@ export function debounce(fn, wait) {
 	};
 }
 export function evaluateExpression(exp) {
+	let res;
 	if (exp.startsWith('=')) {
 		try {
 			// eslint-disable-next-line no-eval
-			return eval(exp.slice(1));
+			res = eval(exp.slice(1));
 		} catch (e) {
-			return exp;
+			res = exp;
 		}
 	}
+	return res;
+}
+export function clone(obj) {
+	return JSON.parse(JSON.stringify(obj));
 }

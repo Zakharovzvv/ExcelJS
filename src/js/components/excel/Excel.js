@@ -1,6 +1,7 @@
 import { $ } from '../../core/dom';
 import { Emitter } from '../../core/Emitter';
-import StoreSubscriber from '../../core/StoreSubscriber';
+import StoreSubscriber from '../../store/StoreSubscriber';
+import { changeDate } from '../../redux/actions';
 
 class Excel {
 	constructor(selector, options) {
@@ -30,12 +31,11 @@ class Excel {
 		return $root;
 	}
 
-	render() {
-		const $root = this.getContent();
-		this.$container.append($root);
+	init() {
 		this.subscriber.subscribe(this.contentElements);
 		const data = this.store.getState();
 		this.contentElements.forEach((el) => el.init(data));
+		this.store.dispatch(changeDate());
 	}
 
 	destroy() {

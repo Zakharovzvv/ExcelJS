@@ -39,5 +39,6 @@ export function toolbarTemplate(state) {
 			value: { textDecoration: state.textDecoration === 'underline' ? 'normal' : 'underline' },
 		},
 	];
-	return buttons.map(buttonTemplate).join('');
+	return buttons.map(buttonTemplate)
+		.join('');
 }

@@ -1,4 +1,5 @@
 import {
+	CHANGE_DATE,
 	CHANGE_FILENAME, CHANGE_STYLES, CHANGE_TEXT, TABLE_RESIZE,
 } from './types';
 
@@ -29,5 +30,10 @@ export function changeFileName(data) {
 	return {
 		type: CHANGE_FILENAME,
 		data,
+	};
+}
+export function changeDate() {
+	return {
+		type: CHANGE_DATE,
 	};
 }
