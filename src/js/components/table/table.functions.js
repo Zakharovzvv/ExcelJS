@@ -19,6 +19,7 @@ function matrix($target, $current) {
 		return acc;
 	}, []);
 }
+
 function nextSelector(key, { col, row }) {
 	const MIN_VALUE = 0;
 	// eslint-disable-next-line default-case
@@ -45,9 +46,11 @@ function nextSelector(key, { col, row }) {
 function setColWidth(root, col, width) {
 	root.findAll(`[data-col="${col}"]`)
 		.forEach((el) => {
-			$(el).setStyle({ width: `${width}px` });
+			$(el)
+				.setStyle({ width: `${width}px` });
 		});
 }
+
 export {
 	canResize, isCell, matrix, nextSelector, setColWidth,
 };

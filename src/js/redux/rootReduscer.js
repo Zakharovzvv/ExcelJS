@@ -1,4 +1,5 @@
 import {
+	CHANGE_DATE,
 	CHANGE_FILENAME, CHANGE_STYLES, CHANGE_TEXT, TABLE_RESIZE,
 } from './types';
 
@@ -33,7 +34,12 @@ function rootReducer(state, action) {
 			...state,
 			[field]: action.data.value,
 		};
-	default: return state;
+	case CHANGE_DATE:
+		field = 'lastChangeDate';
+		return {
+			...state,
+			[field]: new Date().toJSON(),
+		};	default: return state;
 	}
 }
 

@@ -8,7 +8,7 @@ class Store {
 	subscribe(fn) {
 		this.listeners.push(fn);
 		return {
-			unsubscribe() {
+			unsubscribe: () => {
 				this.listeners = this.listeners.find((l) => l !== fn);
 			},
 		};

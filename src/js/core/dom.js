@@ -23,7 +23,7 @@ class Dom {
 	}
 
 	clear() {
-		this.html = '';
+		this.$el.innerHTML = '';
 		return this;
 	}
 
