@@ -40,7 +40,7 @@ export function debounce(fn, wait) {
 	};
 }
 export function evaluateExpression(exp) {
-	let res;
+	let res = exp;
 	if (exp.startsWith('=')) {
 		try {
 			// eslint-disable-next-line no-eval

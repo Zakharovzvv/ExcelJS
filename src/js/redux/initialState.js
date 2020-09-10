@@ -1,4 +1,4 @@
-import { clone, storage } from '../core/utils';
+import { clone } from '../core/utils';
 import { defaultFileName } from '../constants';
 
 const defaultState = {
@@ -12,6 +12,6 @@ const defaultState = {
 	lastChangeDate: new Date().toJSON(),
 
 };
-export function initialState(storageName) {
-	return storage(storageName) ? storage(storageName) : clone(defaultState);
+export function initialState(state) {
+	return state || clone(defaultState);
 }
