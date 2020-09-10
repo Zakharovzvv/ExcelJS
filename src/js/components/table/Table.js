@@ -25,7 +25,7 @@ class Table extends ExcelComponent {
 	}
 
 	toHTML() {
-		return createTable(20);
+		return createTable(30);
 	}
 
 	prepare() {

@@ -11,7 +11,7 @@ class Toolbar extends ExcelStateComponent {
 			$root,
 			{
 				name: 'Toolbar',
-				isteners: ['click'],
+				listeners: ['click'],
 				subscribe: ['changeStyles'],
 				...options,
 			},
@@ -43,7 +43,6 @@ class Toolbar extends ExcelStateComponent {
 
 	onClick(e) {
 		const $target = $(e.target);
-
 		if ($target.data().type === 'button') {
 			const value = JSON.parse($target.data().value);
 

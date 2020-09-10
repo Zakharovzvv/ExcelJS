@@ -9,17 +9,21 @@
   border-top: 0
   border-bottom: 0
   max-height: 1000px
+  .first-row
+    position: fixed
+  .table-content
+    margin-top: $cell-height
+    z-index: -1
   .row
     display: flex
     min-height: 20px
     height: $cell-height
     .row-data
       display: flex
-      height: 100%
     .row-info
       @extend .cell, .column-header
-      width: $first-column-width
-      height: 100%
+      width: 40px !important
+      height: $cell-height
     .cell
       width: $cell-width
       border: $border
@@ -38,7 +42,7 @@
       @extend .cell
       +flexCenter
       background: #f8f9fa
-      position: relative
+
       .row-resizer,.column-resizer
         position: absolute
         right: 0

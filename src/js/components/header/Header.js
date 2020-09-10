@@ -56,6 +56,7 @@ class Header extends ExcelComponent {
 			}
 		} else if (($(target)
 			.data().type === 'exit')) {
+			//			debugger;
 			ActiveRoute.navigate('');
 		}
 	}
